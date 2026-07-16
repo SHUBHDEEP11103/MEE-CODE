@@ -1,4 +1,4 @@
-// Last updated: 16/07/2026, 20:41:50
+// Last updated: 16/07/2026, 20:41:59
 1class Solution {
 2public:
 3    long long gcdSum(vector<int>& nums) {
