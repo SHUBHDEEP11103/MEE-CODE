@@ -1,4 +1,4 @@
-// Last updated: 17/07/2026, 21:52:54
+// Last updated: 18/07/2026, 22:25:19
 1 class Solution {
 2public:
 3    int trap(vector<int>& arr) {
