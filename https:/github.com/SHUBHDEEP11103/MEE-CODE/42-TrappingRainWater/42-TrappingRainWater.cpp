@@ -1,33 +1,30 @@
-// Last updated: 26/07/2026, 22:46:02
+// Last updated: 28/07/2026, 00:25:22
 1 class Solution {
 2public:
 3    int trap(vector<int>& arr) {
 4        int n = arr.size();
-5        // vector<int> leftmax(n);
-6        // vector<int> rightmax(n);
-7        int total = 0;
-8        int maxi=0;
-9        // for(int i=0; i<n; i++){
-10        //     leftmax[i] = max(maxi,arr[i]);
-11        //     maxi = leftmax[i];
-12        // }
-13        // maxi = 0;
-14        // for(int i=n-1; i>0; i--){
-15        //     maxi = max(maxi,arr[i]);
-16        //     rightmax[i] = maxi;
-17        // }
-18        int leftmax = arr[0];
-19        
-20        for(int i=0; i<n; i++){
-21            int rightmax = 0;
-22            for(int j=i; j<n; j++){
-23                rightmax = max(rightmax,arr[j]);
-24            }
-25            leftmax = max(leftmax,arr[i]);
-26            if(arr[i]<leftmax && arr[i]<rightmax){
-27                total += min(leftmax,rightmax)-arr[i];
-28            }
-29        }
-30        return total;
-31    }
-32};
+5        int total = 0;
+6        int leftmax = 0;
+7        int rightmax = 0;
+8        int l = 0;
+9        int r = n-1;
+10        while(l < r){
+11            if(arr[l] < arr[r]){
+12                if(leftmax > arr[l]){
+13                    total += leftmax - arr[l];
+14                }
+15                else leftmax = arr[l];
+16                l ++;
+17            }
+18            else{
+19                if(rightmax > arr[r]){
+20                    total += rightmax - arr[r];
+21                }else rightmax = arr[r];
+22                r --;
+23            }
+24
+25        }
+26        
+27        return total;
+28    }
+29};
