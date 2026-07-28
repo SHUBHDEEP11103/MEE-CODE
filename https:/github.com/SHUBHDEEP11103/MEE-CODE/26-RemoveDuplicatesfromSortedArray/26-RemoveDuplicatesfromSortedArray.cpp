@@ -1,4 +1,4 @@
-// Last updated: 28/07/2026, 17:11:08
+// Last updated: 28/07/2026, 17:14:19
 1class Solution {
 2public:
 3    int removeDuplicates(vector<int>& nums) {
@@ -11,6 +11,6 @@
 10            nums[i] = it;
 11            i++;
 12        }
-13        return ans.size();
+13        return i;
 14    }
 15};
