@@ -1,23 +1,14 @@
-// Last updated: 29/07/2026, 10:26:56
+// Last updated: 29/07/2026, 10:32:10
 1class Solution {
 2public:
 3    int missingNumber(vector<int>& nums) {
 4        int n = nums.size();
-5        int ans; 
-6        bool flag = true;
-7        for(int i=0; i<=n; i++){
-8            flag = false;
-9            for(auto j : nums){
-10                if(i==j){
-11                    flag = true;
-12                    break;
-13                }
-14            }
-15            if(!flag){
-16                ans = i;
-17                break;
-18            }
-19        }
-20        return ans;
-21    }
-22};
+5        int total=0;
+6        for(auto i:nums){
+7            total += i;
+8        }
+9        int sum = (n*(n+1))/2;
+10        
+11        return sum-total;
+12    }
+13};
